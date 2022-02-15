@@ -9,7 +9,7 @@ import {OnOff} from "./components/OnOff";
 import Input from "./components/Input";
 // import {Select} from "./components/Select/Select";
 import {Example} from "./components/MemoComponents/ReactMemo";
-import {HelpsForReactMemo, UseMemoDifficult} from "./components/MemoComponents/UseMemo";
+import {HelpsForReactMemo, LikeCallback, UseMemoDifficult} from "./components/MemoComponents/UseMemo";
 import {Select} from "./components/Select/Select";
 
 
@@ -35,6 +35,8 @@ const App = React.memo(() => {
             <UseMemoDifficult/>
             <hr/>
             <HelpsForReactMemo/>
+            <hr/>
+            <LikeCallback/>
             <hr/>
             <Accordion title={"Control component"}
                        items={[{title: 'Jesss', value: 1}, {title: 'Monika', value: 2}, {title: 'Patricia', value: 3}]}

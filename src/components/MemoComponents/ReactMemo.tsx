@@ -21,9 +21,9 @@ const Users = React.memo(UsersSecret) //юзерс не меняются и не
 
 export const Example = React.memo(() => {
     const [counter, setCounter] = useState(0)
-    const [users, setUsers] = useState(['pic', 'dick-pic'])
+    const [users, setUsers] = useState(['pic', 'example-pic'])
     const addUser = () => {
-        let newUser = 'Cunt ' + new Date().getTime()
+        let newUser = 'Count ' + new Date().getTime()
         setUsers([...users, newUser])
     }
     return (

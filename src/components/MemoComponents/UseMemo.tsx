@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from 'react'
+import React, {useCallback, useMemo, useState} from 'react'
 
 
 export const UseMemoDifficult = React.memo(() => {
@@ -9,11 +9,11 @@ export const UseMemoDifficult = React.memo(() => {
     let resultA = 1;
     let resultB = 1;
 
-    resultA = useMemo(()=> {
+    resultA = useMemo(() => {
         let tempResA = 1;
         for (let i = 1; i <= a; i++) {
             let fake = 0;
-            while (fake < 10000000){
+            while (fake < 10000000) {
                 fake++;
                 const fakeValue = Math.random()
             }
@@ -63,31 +63,78 @@ export const UsersSecret = (props: { users: Array<String> }) => {
 export const Users = React.memo(UsersSecret) //юзерс не меняются и не будут переисовываться
 
 
-    export const HelpsForReactMemo = React.memo(() => {
-        console.log('HelpsForReactMemo')
-        const [counter, setCounter] = useState(0)
-        const [users, setUsers] = useState(['pic', 'dick-pic'])
+export const HelpsForReactMemo = React.memo(() => {
+    console.log('HelpsForReactMemo')
+    const [counter, setCounter] = useState(0)
+    const [users, setUsers] = useState(['pic', 'helps-pic'])
 
-        const newArr = useMemo(()=>{
-           return users.filter(u => u.toLowerCase().indexOf('d') > -1)},
-            [users]
-            //внимательно анализируем зависимости
-        )
-        const addUser = () => {
-            let newUser = 'Cuntd ' + new Date().getTime()
-            setUsers([...users, newUser])
-            //будет вызываться юзер сикрет заново так как, мы добавляем нового юзера
-            //и реакт сравнивает старый массив юзеров с новым и перерисовывает
-        }
-        return (
-            <>
-                <button onClick={() => setCounter(counter + 1)}>Add</button>
-                <button onClick={() => addUser()}>Add user</button>
-                {counter}
-                <Users users={newArr}/>
-                {/*//фильтр юзеров помещает их в новый массив и происходит перерисовка даже с реакт мемо юзерс комп,
+    const newArr = useMemo(() => {
+            return users.filter(u => u.toLowerCase().indexOf('h') > -1)
+        },
+        [users]
+        //внимательно анализируем зависимости
+    )
+    const addUser = () => {
+        let newUser = 'Count-h ' + new Date().getTime()
+        setUsers([...users, newUser])
+        //будет вызываться юзер сикрет заново так как, мы добавляем нового юзера
+        //и реакт сравнивает старый массив юзеров с новым и перерисовывает
+    }
+    return (
+        <>
+            <button onClick={() => setCounter(counter + 1)}>Add</button>
+            <button onClick={() => addUser()}>Add user</button>
+            {counter}
+            <Users users={newArr}/>
+            {/*//фильтр юзеров помещает их в новый массив и происходит перерисовка даже с реакт мемо юзерс комп,
                 поэтому помещаем фильтр в useMemo */}
-            </>
-        )
-    })
+        </>
+    )
+})
+
+export const LikeCallback = React.memo(() => {
+    console.log('LikeCallback')
+    const [counter, setCounter] = useState(0)
+    const [books, setBooks] = useState(['React', 'JS Book', 'CSS&HTML', 'Kotlin'])
+
+
+    // const memoizedAddBook = useMemo(() => {
+    //     return () => {
+    //         console.log(books)
+    //         let newUser = 'Angular ' + new Date().getTime()
+    //         setBooks([...books, newUser])
+    //     }
+    // }, [books]);
+
+    const memoizedAddBook2 = useCallback(() => {
+        console.log(books)
+        let newUser = 'Angular ' + new Date().getTime()
+        setBooks([...books, newUser])
+    }, [books]);
+
+    return (
+        <>
+            <button onClick={() => setCounter(counter + 1)}>Add</button>
+            {counter}
+            <Book addBook={memoizedAddBook2}/>
+            {/*//фильтр юзеров помещает их в новый массив и происходит перерисовка даже с реакт мемо юзерс комп,
+                поэтому помещаем фильтр в useMemo */}
+        </>
+    )
+})
+
+type BookSecretType = {
+    addBook: () => void
+}
+
+export const BooksSecret = (props: BookSecretType) => {
+    console.log('BOOKS SECRET')
+    return (
+        <div>
+            <button onClick={() => props.addBook()}>Add book</button>
+        </div>
+    )
+}
+
+export const Book = React.memo(BooksSecret)
 

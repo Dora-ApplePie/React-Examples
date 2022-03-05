@@ -97,7 +97,6 @@ export const LikeCallback = React.memo(() => {
     const [counter, setCounter] = useState(0)
     const [books, setBooks] = useState(['React', 'JS Book', 'CSS&HTML', 'Kotlin'])
 
-
     // const memoizedAddBook = useMemo(() => {
     //     return () => {
     //         console.log(books)

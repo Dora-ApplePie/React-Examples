@@ -13,6 +13,7 @@ import {HelpsForReactMemo, LikeCallback, UseMemoDifficult} from "./components/Me
 import {Select} from "./components/Select/Select";
 import {UseStateEx} from "./components/UseState/UseState";
 import {UseEffectEx} from "./components/useEffect/useEffect";
+import {SetTimeoutAndInterval} from "./components/useEffect/SetTimeoutAndInterval";
 
 
 const App = React.memo(() => {
@@ -60,8 +61,12 @@ const App = React.memo(() => {
             {/*<hr/>*/}
             <OnOff switcher={switcherValue} onClick={setSwitcher}/>
             <Input/>
+            <hr/>
             <UseStateEx/>
+            <hr/>
             <UseEffectEx/>
+            <hr/>
+            <SetTimeoutAndInterval/>
         </div>
     );
 })

@@ -19,10 +19,10 @@ export const SetTimeoutAndInterval = () => {
     useEffect(() => {
 
         setInterval(() => {
-            console.log('tick ' + counter)
-            setCounter((state) => state + 1)
+            console.log('tick ' + counter) //берет из замыкания
+            setCounter((state) => state + 1) //берет из измененного counter
         }, 1000)
-    }, [])
+    },[])
 
 
     return <div>

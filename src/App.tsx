@@ -14,6 +14,7 @@ import {Select} from "./components/Select/Select";
 import {UseStateEx} from "./components/UseState/UseState";
 import {UseEffectEx} from "./components/useEffect/useEffect";
 import {SetTimeoutAndInterval} from "./components/useEffect/SetTimeoutAndInterval";
+import {Clock} from "./components/Clock/Clock";
 
 
 const App = React.memo(() => {
@@ -29,6 +30,8 @@ const App = React.memo(() => {
         <div className={'main'}>
             <PageTitle title={"This is APP Component"}/>
             Article 666
+            <hr/>
+            <Clock/>
             <hr/>
             <UncontrolledAccordion title={"Menu"}/>
             {/*<UncontrolledAccordion title={"Users"}/>*/}
@@ -66,7 +69,8 @@ const App = React.memo(() => {
             <hr/>
             <UseEffectEx/>
             <hr/>
-            <SetTimeoutAndInterval/>
+            {/*<SetTimeoutAndInterval/>*/}
+            <hr/>
         </div>
     );
 })

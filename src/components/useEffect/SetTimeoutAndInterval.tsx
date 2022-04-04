@@ -14,7 +14,7 @@ export const SetTimeoutAndInterval = () => {
     //         console.log('SET TIMEOUT')
     //         document.title = counter.toString()
     //     }, 3000)
-    // return ()=> clearInterval(intervalID)
+    // return ()=> clearTimeout(intervalID)
     // }, [counter]) //props.counter
 
     useEffect(() => {

@@ -24,7 +24,7 @@ export const SetTimeoutAndInterval = () => {
             setCounter((state) => state + 1) //берет из измененного counter
         }, 1000)
         return () => clearInterval(intervalId)
-    }, [])
+    }, [counter])
 
     return <div>
         {/*<button onClick={() => setCounter(counter + 1)}>+</button>*/}

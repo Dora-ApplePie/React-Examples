@@ -10,20 +10,21 @@ export const SetTimeoutAndInterval = () => {
 
 
     // useEffect(() => {
-    //     setTimeout(()=> {
+    //     const intervalID = setTimeout(()=> {
     //         console.log('SET TIMEOUT')
     //         document.title = counter.toString()
     //     }, 3000)
+    // return ()=> clearInterval(intervalID)
     // }, [counter]) //props.counter
 
     useEffect(() => {
 
-        setInterval(() => {
+        const intervalId = setInterval(() => {
             console.log('tick ' + counter) //берет из замыкания
             setCounter((state) => state + 1) //берет из измененного counter
         }, 1000)
-    },[])
-
+        return () => clearInterval(intervalId)
+    }, [])
 
     return <div>
         {/*<button onClick={() => setCounter(counter + 1)}>+</button>*/}

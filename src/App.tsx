@@ -12,7 +12,7 @@ import {Example} from "./components/MemoComponents/ReactMemo";
 import {HelpsForReactMemo, LikeCallback, UseMemoDifficult} from "./components/MemoComponents/UseMemo";
 import {Select} from "./components/Select/Select";
 import {UseStateEx} from "./components/UseState/UseState";
-import {UseEffectEx} from "./components/useEffect/useEffect";
+import {KeyTrackerExample, ResetEffectExample, SetTimeoutExample, UseEffectEx} from "./components/useEffect/useEffect";
 import {SetTimeoutAndInterval} from "./components/useEffect/SetTimeoutAndInterval";
 import {Clock} from "./components/Clock/Clock";
 
@@ -71,6 +71,11 @@ const App = React.memo(() => {
             <hr/>
             <UseEffectEx/>
             <hr/>
+            <ResetEffectExample />
+            <hr/>
+            <KeyTrackerExample/>
+            <hr/>
+            <SetTimeoutExample />
             {/*<SetTimeoutAndInterval/>*/}
             <hr/>
         </div>

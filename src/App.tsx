@@ -31,7 +31,9 @@ const App = React.memo(() => {
             <PageTitle title={"This is APP Component"}/>
             Article 666
             <hr/>
-            <Clock/>
+            <Clock mode={'analog'}/>
+            <hr/>
+            <Clock mode={'digital'}/>
             <hr/>
             <UncontrolledAccordion title={"Menu"}/>
             {/*<UncontrolledAccordion title={"Users"}/>*/}

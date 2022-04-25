@@ -24,6 +24,7 @@ export const UseEffectEx = () => {
     }, [counter])
 
     return <div>
+        <div><b>useEffect</b></div>
         <button onClick={() => setCounter(counter + 1)}>+</button>
         <button onClick={() => setFake(fake + 1)}>+</button>
         Set title name to: {counter} and fake is: {fake}
@@ -48,6 +49,7 @@ export const ResetEffectExample = () => {
     const increase = () => setCounter(counter + 1)
 
     return <>
+        <div><b>reset useEffect </b></div>
         Hello, counter: {counter}
         <button onClick={increase}>+</button>
     </>
@@ -67,6 +69,7 @@ export const KeyTrackerExample = () => {
     }, [text])
 
     return <>
+        <div><b>KeyTracker with useEffect</b></div>
         Typed text: {text}
     </>
 }
@@ -88,6 +91,7 @@ export const SetTimeoutExample = () => {
     }, [text])
 
     return <>
+        <div><b>SetTimeout and clearTimeout in useEffect</b></div>
         Typed text: {text}
     </>
 }

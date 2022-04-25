@@ -27,6 +27,7 @@ export const Clock: React.FC<PropsType> = (props) => {
             view = <DigitalClockView date={date}/>
     }
     return <div>
+        <div><b>React clock</b></div>
         {view}
     </div>
 }

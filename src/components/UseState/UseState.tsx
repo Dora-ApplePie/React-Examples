@@ -12,6 +12,7 @@ export const UseStateEx = () => {
     const [counter, setCounter] = useState(getDifficultCalculation); // [0, func(newValue){}]
 
     return <>
+        <div><b>useState</b></div>
         <button onClick={() => setCounter(state => state + 1)}>+</button>
         {counter}
     </>

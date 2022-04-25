@@ -57,6 +57,7 @@ export const Select = React.memo((props: SelectPropsType) => {
     }
     return (
         <>
+            <div><b>Select</b></div>
             <div className={styles.select} onKeyUp={onKeyUp} tabIndex={0}>
                 <span className={styles.main}
                       onClick={setActiveHandler}>{selectedItem && selectedItem.title}</span>

@@ -14,7 +14,7 @@ const UncontrolledAccordion = React.memo((props: AccordionPropsType) => {
     let [state, dispatch] = useReducer(reducer, {collapsed: false})
 
     return <>
-        <span>Неконтролируемая компонента: </span>
+        <span>Неконтролируемая компонента accordion: </span>
         <AccordionTitle title={props.title} onClick={() => {
             dispatch({type: TOGGLE_COLLAPSED}) //диспатчим (отправляем) инструкцию типа тоггл
         }}/>

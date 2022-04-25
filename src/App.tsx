@@ -29,7 +29,7 @@ const App = React.memo(() => {
     return (
         <div className={'main'}>
             <PageTitle title={"This is APP Component"}/>
-            Article 666
+            <div><b>React Examples</b></div>
             <hr/>
             <Clock mode={'analog'}/>
             <hr/>
@@ -46,7 +46,7 @@ const App = React.memo(() => {
             <hr/>
             <LikeCallback/>
             <hr/>
-            <Accordion title={"Control component"}
+            <Accordion title={"Control component accordion"}
                        items={[{title: 'Jesss', value: 1}, {title: 'Monika', value: 2}, {title: 'Patricia', value: 3}]}
                        collapsed={accordionCollapsed} onChange={() => setCollapsed(!accordionCollapsed)}
                        onClick={(value) => {

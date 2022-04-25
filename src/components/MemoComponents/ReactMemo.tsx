@@ -28,6 +28,7 @@ export const Example = React.memo(() => {
     }
     return (
         <>
+            <div><b>React.memo</b></div>
             <button onClick={() => setCounter(counter + 1)}>Add</button>
             <button onClick={addUser}>Add user</button>
             <NewMessagesCounter count={counter}/>

@@ -34,6 +34,7 @@ export const UseMemoDifficult = React.memo(() => {
 
     return (
         <>
+            <b>useMemo</b>
             <input value={a} onChange={(event) => setA(+event.currentTarget.value)}/>
             <input value={b} onChange={(event) => setB(Number(event.currentTarget.value))}/>
             {/*//Number and + это одно и тоже приведение к типу*/}
@@ -82,6 +83,7 @@ export const HelpsForReactMemo = React.memo(() => {
     }
     return (
         <>
+            <div><b>React.memo</b></div>
             <button onClick={() => setCounter(counter + 1)}>Add</button>
             <button onClick={() => addUser()}>Add user</button>
             {counter}
@@ -113,6 +115,7 @@ export const LikeCallback = React.memo(() => {
 
     return (
         <>
+            <div><b>useCallback</b></div>
             <button onClick={() => setCounter(counter + 1)}>Add</button>
             {counter}
             <Book addBook={memoizedAddBook2}/>
